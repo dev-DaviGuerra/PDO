@@ -3,14 +3,15 @@
 require_once 'connection.php';
 
 //$pdo...
-
-$sql = 'SELECT * FROM usuarios';
+$id = 1;
+$sql = 'SELECT * FROM usuarios WHERE id = :id';
 
 $stmt = $pdo->prepare($sql);
+$stmt->bindParam(':id', $id);
 $result = $stmt->execute();
 
 //Array Associativo 
-if($result)
+if($stmt)
 {
    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
