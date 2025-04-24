@@ -6,6 +6,7 @@ $dsn = "mysql:host=$ENV_HOST;dbname=$ENV_DBNAME"; //String de conexão com o ban
 try
 {
     $pdo = new PDO($dsn, $ENV_USERNAME, $ENV_PASSWORD);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
     echo 'Conexão bem sucedida. <hr><br/>';
 }catch(PDOException $e)
 {

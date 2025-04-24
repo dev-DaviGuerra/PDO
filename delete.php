@@ -18,6 +18,7 @@ if($stmt->rowCount() > 0) {
     echo 'Nenhum usuário excluído';
 }
 
+
 /*
  CRUD
 C - CREATE - Inserir dados no banco de dados
